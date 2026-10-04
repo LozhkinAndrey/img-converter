@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir "poetry>=1.8,<2"
 
 # Копируем с масками: poetry.lock может ещё не существовать
 COPY pyproject.toml* poetry.lock* ./
-RUN poetry install --no-root --without dev
+RUN poetry install --no-root
 
 COPY app ./app
 COPY static ./static
