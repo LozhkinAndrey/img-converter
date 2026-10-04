@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Конвертер изображений</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>🖼️ Конвертер изображений</h1>
+    <p class="hint">JPG или PNG, до 10 МБ</p>
+
+    <form id="upload-form">
+      <label class="file-label">
+        <input type="file" id="file" accept="image/jpeg,image/png" required>
+        <span id="file-name">Выберите файл…</span>
+      </label>
+
+      <label>Операция
+        <select id="operation">
+          <option value="resize">Изменить размер (по ширине)</option>
+          <option value="grayscale">Перевести в ч/б</option>
+          <option value="rotate">Повернуть</option>
+        </select>
+      </label>
+
+      <label id="width-group">Новая ширина (px)
+        <input type="number" id="width" min="1" max="10000" value="800">
+      </label>
+
+      <label id="angle-group" hidden>Угол
+        <select id="angle">
+          <option value="90">90°</option>
+          <option value="180">180°</option>
+          <option value="270">270°</option>
+        </select>
+      </label>
+
+      <button type="submit" id="submit-btn">Обработать</button>
+    </form>
+
+    <div id="error" class="error" hidden></div>
+
+    <section id="result" hidden>
+      <h2>Результат</h2>
+      <img id="result-img" alt="Результат">
+      <a id="download-link" class="download" download>Скачать результат</a>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

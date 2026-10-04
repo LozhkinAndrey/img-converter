@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "img-converter"
+version = "1.0.0"
+description = "Учебный сервис преобразования изображений с метриками Prometheus"
+authors = ["you <you@example.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = ">=0.111.0"
+uvicorn = ">=0.30.0"
+pillow = ">=10.3.0"
+prometheus-fastapi-instrumentator = ">=7.0.0"
+python-multipart = ">=0.0.9"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
